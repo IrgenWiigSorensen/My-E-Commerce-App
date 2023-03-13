@@ -11,7 +11,7 @@ const defaultFormFields = {
   displayName: '', 
   email: '',
   password: '', 
-  corfirmPassword: '',
+  confirmPassword: '',
 }
 
 const SignUpForm = () => {
@@ -36,6 +36,7 @@ const SignUpForm = () => {
         password
       );
 
+      
       await createUserDocumentFromAuth(user, {displayName});
       resetFormFields();
       
