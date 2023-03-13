@@ -37,9 +37,18 @@ const SignInForm = () => {
       resetFormFields();
       
     } catch (error) {
-      console.log(error)
+      switch(error.code) {
+        case 'auth/wrong-password': 
+          alert('incorrect password for email');
+          break;
+        case 'auth/user-not-found': 
+          alert('no user associated with this email');
+          break; 
+        default: 
+          console.log(error);
+      }
     }
-  }
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -72,7 +81,7 @@ const SignInForm = () => {
         />
         <div className='buttons-container'>
           <Button buttonType='default' type="submit">SIGN IN</Button>
-          <Button buttonType='google' onClick={signInWithGoogle} >GOOOGLE SIGN IN</Button>
+          <Button buttonType='google' type="button" onClick={signInWithGoogle} >GOOOGLE SIGN IN</Button>
         </div>
       </form>
     </div>
