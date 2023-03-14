@@ -4,3 +4,16 @@
   justify-content: space-between;
   margin: 30px auto;
 }
+
+@media screen and (max-width: 900px) {
+  .authentication-container {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .sign-up-container {
+    margin:0 auto 50px;
+  }
+}
